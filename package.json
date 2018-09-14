@@ -9,7 +9,7 @@
     "lite": "lite-server"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "lite-server": "^2.3.0"
   },
