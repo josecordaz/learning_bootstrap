@@ -169,11 +169,11 @@
     <div class="container">
         <div class="row row-content">
             <div class="col">
-                <div id="mycarousel23" class="carousel slide" data-ride="carousel">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#mycarousel23" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel23" data-slide-to="1"></li>
-                        <li data-target="#mycarousel23" data-slide-to="2"></li>
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox" >
                         <div class="carousel-item active">
@@ -200,12 +200,20 @@
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#mycarousel23" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
-                <a class="carousel-control-next" href="#mycarousel23" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
+                <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
             </div>
         </div>
 
@@ -297,10 +305,22 @@
            </div>
         </div>
     </footer>
-<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#mycarousel').carousel({ interval: 2000 });
+            $('#carousel-pause').click(() => {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#carousel-play').click(() => {
+                $('#mycarousel').carousel('cycle');
+            });
+
+        })
+    </script>
 </body>
 
 </html>
