@@ -1,14 +1,14 @@
-$(document).ready(() => {
-    $('#btnLogin').on('click', (event) => {
+$(document).ready(function() {
+    $('#btnLogin').on('click', function (event){
         event.preventDefault();
         $('#loginModal').modal('show');
     });
-    $('#btnReserveTable').on('click', (event) => {
+    $('#btnReserveTable').on('click', function(event){
         event.preventDefault();
         $('#reservationTable').modal('show');
     });
     $('#mycarousel').carousel({ interval: 2000 });
-    $('#carouselButton').click(() => {
+    $('#carouselButton').click(function() {
         if($('#carouselButton').children('span').hasClass('fa-pause')){
             $('#mycarousel').carousel('pause');
             $('#carouselButton').children('span').removeClass('fa-pause')
@@ -20,4 +20,4 @@ $(document).ready(() => {
         }
         
     });
-})
+});
